@@ -4,7 +4,7 @@ from django.conf.urls.defaults import *
 from django.contrib import admin
 admin.autodiscover()
 urlpatterns = patterns('',
-	('', 'sports.views.main'),
+	(r'^$', 'sports.views.main'),
 	(r'^index/(?P<method>\w+)/$', 'sports.views.index'),
 	(r'^home/$', 'sports.views.main'),
 	(r'^info/$', 'sports.views.getinfo'),
