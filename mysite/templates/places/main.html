@@ -1,0 +1,13 @@
+{% extends "sidemenu.html" %}
+{% block content %}
+<html>
+<body>
+<form action="/results/" method='post'>
+{% csrf_token %}
+<input type='text' name='term'>
+<input type="submit" value="Enter the crowd" />
+</form>
+<a href='/index/al'>See list of places</a>
+</html>
+</body>
+{% endblock content %}

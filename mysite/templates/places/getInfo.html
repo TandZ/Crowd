@@ -1,0 +1,14 @@
+{% extends "sidemenu.html" %}
+{% block content %}
+<html>
+<body>
+
+<form name="input" action="/results/" method="post">
+{% csrf_token %}
+Search: <input type="text" name="term" />
+<input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>
+{% endblock content %}

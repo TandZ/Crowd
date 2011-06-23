@@ -1,0 +1,29 @@
+{% extends "sidemenu.html" %}
+{% block content %}
+
+<html>
+
+<Title>
+{{place}}
+</Title>
+<p style = "font-size: 250%; textalign: center">{{place}}</p>
+</br>
+<p>Would you like to <a href=/update/add/{{place}}/>update</a> this page?
+<body>
+{% for time in data %}
+<p>{{time.time}}: {{time.crowd}}</br></p>
+{% endfor %}
+
+
+
+<strong><p style="font-size: 150%; textalign: center;">Comments:</p></strong>
+{% for entry in entries %}
+	<p>"{{entry.comment}}"</br></p>
+{% endfor %}
+
+
+<p>Would you like to <a href=/update/add/{{place}}/>update</a> this page?
+
+</body>
+</html>
+{% endblock content %}

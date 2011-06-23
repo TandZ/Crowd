@@ -1,0 +1,22 @@
+{% extends "sidemenu.html" %}
+{% block content %}
+<html>
+<body>
+
+<h1 style="font-family:verdana;font-size:40px;">Add Entry</h1>
+<p style="font-family:arial;color:red;font-size:20px;">Add an entry we missed to our database.</p>
+
+<form action="redirect/" method="post">
+{% csrf_token %}
+Title: <input type="text" name="title" /></br>
+Location: <input type="text" name="location" /></br>
+
+<p>Details</p>
+<p>Provide a brief description of the location.</p>
+<textarea NAME = "details" rows="10" cols="30"> Write your description here. </textarea></br> 
+
+<input type="submit" value="Add Entry" />
+</form>
+</body>
+</html>
+{% endblock content %}

@@ -1,0 +1,56 @@
+{% extends "sidemenu.html" %}
+
+{% block content %}
+
+
+<html>
+<body>
+
+
+<strong><p style="font-size: 200%;">{{placeinfo.name}}</p><strong>
+
+
+<form action="/info/{{placeinfo.name}}/" method='post'>
+{%csrf_token%}
+
+<p>Details (feel free to correct or add)</p>
+
+<TEXTAREA NAME="details" COLS=50 ROWS=10>
+{{placeinfo.details}}
+</TEXTAREA>
+
+<p>Time</p>
+<select name="time">
+<option value="0">Early morning</option>
+<option value="1">Late morning</option>
+<option value="2">Midday</option>
+<option value="3">Afternoon</option>
+<option value="4">Evening</option>
+<option value="5">Night</option>
+</select>
+
+
+
+<p>How crowded?</p>
+<select name="crowded">
+<option value="6">Livestock Pen</option>
+<option value="5">Packed</option>
+<option value="4">Full</option>
+<option value="3">Comfortable</option>
+<option value="2">Spacious</option>
+<option value="1">Sparse</option>
+<option value="0">Post-apocalyptic</option>
+</select>
+
+<p>Any Additional Comments?</p>
+
+<TEXTAREA NAME="comments" COLS=50 ROWS=10></TEXTAREA>
+
+<p></p>
+
+<input type="submit" value="Submit" />
+
+</body>
+</html>
+
+{% endblock content %}

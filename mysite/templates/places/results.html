@@ -1,0 +1,18 @@
+{% extends "sidemenu.html" %}
+{% block content %}
+<html>
+<body>
+
+{% if error_message %} <p><strong>No results. Would you like to <a href=/update/create/> create </a> a page?</strong></p> {%endif%}
+
+<form action = "">
+{% csrf_token %}
+{% for hit in hits %}
+	<p> {{forloop.counter}}. <a href="/info/{{hit}}/"> {{hit}} </a> </br> </br>
+{% endfor %}
+</form>
+
+
+</body>
+</html>
+{% endblock content %}
