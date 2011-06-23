@@ -52,6 +52,9 @@ def getinfo (request):
 	c = {"blank":"blank"}
 	return render_to_response ('places/getInfo.html',{"blank":'blank'}, context_instance=RequestContext(request))
 
+def update():
+	return null
+
 def dispinfo (request, place_name):
 	entry_times = [[],[],[],[],[],[]]
 	data = [0,0,0,0,0,0]	
